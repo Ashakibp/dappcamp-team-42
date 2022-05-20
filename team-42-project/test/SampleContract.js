@@ -42,8 +42,8 @@ describe("Employer contract", () => {
             console.log(await employer.getSalary(sampleAddr))
         })
         it("reverts if caller is not owner", async () => {
-            let kai = employer.connect("0x91c6B8b3B118d42A9a558FF5FdC29447E02f51Ae")
-            console.log(kai)
+            let kai = await employer.connect("0x91c6B8b3B118d42A9a558FF5FdC29447E02f51Ae")
+//             console.log(kai)
             kai.updateSalary(sampleAddr, 10)
             console.log(await employer.getEmployees())
             console.log(await kai.getSalary(sampleAddr))
